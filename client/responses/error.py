@@ -1,0 +1,14 @@
+''' Generic class to mimic the Requests response object '''
+
+
+class ErrorResponse(object):
+    def __init__(self, errors, status_code):
+        self.errors = errors
+        self.status_code = status_code
+        self.text = None  # having text property lets us fail more gracefully
+
+    def json(self):
+        return self.errors
+
+    def __str__(self):
+        return 'Status: {}, Errors: {}'.format(self.status_code, self.errors)

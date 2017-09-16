@@ -1,0 +1,15 @@
+# mac
+.DS_Store
+
+# PyCharm
+.idea
+
+# Python
+__pycache__
+
+# Testing
+.cache
+
+# Coverage
+.coverage
+htmlcov/
