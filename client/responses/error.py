@@ -9,6 +9,3 @@ class ErrorResponse(object):
 
     def json(self):
         return self.errors
-
-    def __str__(self):
-        return 'Status: {}, Errors: {}'.format(self.status_code, self.errors)
