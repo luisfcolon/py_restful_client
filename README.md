@@ -1,6 +1,7 @@
 # Python Api Client
 
 [![Build Status](https://travis-ci.org/luisfcolon/py_api_client.svg?branch=master)](https://travis-ci.org/luisfcolon/py_api_client)
+[![Coverage Status](https://coveralls.io/repos/github/luisfcolon/py_api_client/badge.svg)](https://coveralls.io/github/luisfcolon/py_api_client)
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/luisfcolon/py_api_client/master/LICENSE)
 [![GitHub issues](https://img.shields.io/github/issues/luisfcolon/py_api_client.svg)](https://github.com/luisfcolon/py_api_client/issues)
 
