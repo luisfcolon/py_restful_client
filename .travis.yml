@@ -6,3 +6,5 @@ script:
     - pytest
 install:
   - pip install -r requirements-dev.txt
+after_success:
+    - coveralls
