@@ -40,6 +40,7 @@ def test_api_client_get():
     assert results.json() == { 'data': 'success' }
     assert results.status_code == 200
 
+    
 @responses.activate
 def test_api_client_get_with_id():
     responses.add(responses.GET, 'http://woot.com/users/1',
@@ -54,6 +55,7 @@ def test_api_client_get_with_id():
     assert results.json() == { 'data': 'success' }
     assert results.status_code == 200
 
+    
 @responses.activate
 def test_api_client_post():
     responses.add(responses.POST, 'http://woot.com/users',
