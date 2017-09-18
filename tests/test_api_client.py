@@ -71,6 +71,22 @@ def test_api_client_post():
 
 
 @responses.activate
+def test_api_client_put():
+    responses.add(responses.PUT, 'http://woot.com/users/1',
+                  json={ 'data': 'success' }, status=200,
+                  content_type='application/json')
+
+    client = ApiClient()
+    client.base_url = 'http://woot.com'
+
+    data = { 'firstname': 'luis' }
+    results = client.users(1).put(**data)
+
+    assert results.json() == { 'data': 'success' }
+    assert results.status_code == 200
+
+
+@responses.activate
 def test_api_client_delete():
     responses.add(responses.DELETE, 'http://woot.com/users/1',
                   json={ 'data': 'success' }, status=200,

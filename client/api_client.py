@@ -36,6 +36,9 @@ class ApiClient(object):
     def patch(self, **kwargs):
         return self.request('PATCH', data=kwargs)
 
+    def put(self, **kwargs):
+        return self.request('PUT', data=kwargs)
+
     def request(self, method, data=None, params=None):
         try:
             response = self.session.request(method,
