@@ -21,7 +21,7 @@ http://woot.com/users/1
 
 To use the api client:
 
-```
+```python
 client = ApiClient()
 client.base_url = 'http://woot.com'
 
