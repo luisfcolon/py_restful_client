@@ -17,6 +17,12 @@ http://woot.com/users
 
 # get single user, also can update this user
 http://woot.com/users/1
+
+# get all blog posts
+http://woot.com/posts
+
+# get single post, update post
+http://woot.com/posts/123
 ```
 
 To use the api client:
@@ -29,8 +35,10 @@ client.base_url = 'http://woot.com'
 all_users = client.users.get()
 single_user = client.users(1).get()
 
+all_posts = client.posts.get()
+single_post = client.posts(123).get()
 
-# post/patch/put
+# post/patch/put (same can be applied to posts)
 user_data = { 'firstname': 'luis' }
 
 new_user = client.users.post(**data)
