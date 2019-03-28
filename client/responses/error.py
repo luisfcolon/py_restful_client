@@ -1,6 +1,3 @@
-''' Generic class to mimic the Requests response object '''
-
-
 class ErrorResponse(object):
     def __init__(self, errors, status_code):
         self.errors = errors
