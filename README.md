@@ -1,15 +1,15 @@
-# Python Api Client
+# Python Restful Client
 
-[![Build Status](https://travis-ci.org/luisfcolon/py_api_client.svg?branch=master)](https://travis-ci.org/luisfcolon/py_api_client)
-[![Coverage Status](https://coveralls.io/repos/github/luisfcolon/py_api_client/badge.svg)](https://coveralls.io/github/luisfcolon/py_api_client)
-[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/luisfcolon/py_api_client/master/LICENSE)
-[![GitHub issues](https://img.shields.io/github/issues/luisfcolon/py_api_client.svg)](https://github.com/luisfcolon/py_api_client/issues)
+[![Build Status](https://travis-ci.org/luisfcolon/py_restful_client.svg?branch=master)](https://travis-ci.org/luisfcolon/py_api_client)
+[![Coverage Status](https://coveralls.io/repos/github/luisfcolon/py_restful_client/badge.svg)](https://coveralls.io/github/luisfcolon/py_api_client)
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/luisfcolon/py_restful_client/master/LICENSE)
+[![GitHub issues](https://img.shields.io/github/issues/luisfcolon/py_restful_client.svg)](https://github.com/luisfcolon/py_restful_client/issues)
 
-Silly little python restful api client using `requests`
+Silly little python restful client using [Requests](http://docs.python-requests.org/en/master/)
 
 ## Usage
 
-Let's say you have a Restful API endpoint at:
+Let's say you have the following restful endpoints:
 
 ```
 # get all users
@@ -25,28 +25,51 @@ http://woot.com/posts
 http://woot.com/posts/123
 ```
 
-To use the api client:
+To use the restful client:
 
 ```python
-client = ApiClient()
+client = RestfulClient()
 client.base_url = 'http://woot.com'
 
-# get 
-all_users = client.users.get()
-single_user = client.users(1).get()
+# get
 
-all_posts = client.posts.get()
-single_post = client.posts(123).get()
+all_users = client.get('/users')
+single_user = client.get('/users/1')
 
-# post/patch/put (same can be applied to posts)
-user_data = { 'firstname': 'luis' }
+all_posts = client.get('/posts')
+single_post = client.get('/posts/123')
 
-new_user = client.users.post(**data)
-edit_user = client.users(1).patch(**data)
-edit_user = client.users(1).put(**data)
+# post, patch, put
+
+user_data = {'firstname': 'luis'}
+
+new_user = client.post('/users', data)
+edit_user = client.patch('/users/1', data)
+edit_user = client.put('/users/1', data)
 
 # delete
-deleted_user = client.users(1).delete()
 
-# etc
+deleted_user = client.delete('/users/1')
 ```
+
+Using Basic Authentication is simple. You can create any auth object supported by Requests and pass it into the auth parameter.
+
+
+```
+auth = HTTPBasicAuth(username, password)
+user_data = {'firstname': 'luis'}
+new_user = client.post('/users', data, auth) 
+
+# or
+
+new_user = client.post('/users', data, auth=(username, password))
+
+```
+
+## Error Handling
+
+I removed all error handling from this version.
+
+The client's only purpose is to make an api call and return a resonse. The application using this client should decide how it wants to handle any errors.
+
+
