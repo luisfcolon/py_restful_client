@@ -4,4 +4,4 @@ coverage==4.5.3
 pytest==4.4.0
 pytest-cov==2.6.1
 responses==0.10.6
-coveralls==1.7.0
+coveralls==2.1.2
