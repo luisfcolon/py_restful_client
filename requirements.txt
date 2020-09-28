@@ -1,2 +1,2 @@
-djangorestframework==3.9.2
+djangorestframework==3.12.0
 requests>=2.21.0
