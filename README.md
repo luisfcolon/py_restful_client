@@ -1,7 +1,6 @@
 # Python Restful Client
 
 [![No Maintenance Intended](http://unmaintained.tech/badge.svg)](http://unmaintained.tech/)
-[![Build Status](https://travis-ci.org/luisfcolon/py_restful_client.svg?branch=master)](https://travis-ci.org/luisfcolon/py_restful_client)
 [![Coverage Status](https://coveralls.io/repos/github/luisfcolon/py_restful_client/badge.svg?branch=master)](https://coveralls.io/github/luisfcolon/py_restful_client?branch=master)
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/luisfcolon/py_restful_client/master/LICENSE)
 [![GitHub issues](https://img.shields.io/github/issues/luisfcolon/py_restful_client.svg)](https://github.com/luisfcolon/py_restful_client/issues)
