@@ -65,11 +65,3 @@ new_user = client.post('/users', data, auth)
 new_user = client.post('/users', data, auth=(username, password))
 
 ```
-
-## Error Handling
-
-I removed all error handling from this version.
-
-The client's only purpose is to make an api call and return a response. The application using this client should decide how it wants to handle any errors.
-
-
